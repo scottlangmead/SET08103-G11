@@ -1,4 +1,4 @@
-# USE CASE: <3> <Produce a capital city report >
+# USE CASE: 3 Produce A Capital City Report
 
 ## CHARACTERISTIC INFORMATION
 
@@ -12,11 +12,11 @@
 
 ### Level
 
-*Primary task*
+*Primary Task*
 
 ### Preconditions
 
-*The connected database contains all appropriate data linked to the Capital City Report.*
+*The connected database contains all appropriate data linked to the Capital City Report:*
 
 1. Country Name
 2. City Name
@@ -28,7 +28,7 @@
 
 ### Failed End Condition
 
-*The Capital City Report is nor produced*
+*Capital City Report is not produced*
 
 ### Primary Actor
 
@@ -40,22 +40,20 @@
 
 ## MAIN SUCCESS SCENARIO
 
-**
+*The following data is displayed within the Capital City Report:*
 
-1. action description
+1. Country Name
+2. City Name
+3. City Population
 
 ## EXTENSIONS
 
-*put here the extensions, one at a time, each referring to the step of the main scenario*
-
-1. **Condition**: action of sub use case
+1.
 
 ## SUB-VARIATIONS
 
-*None*
+*None.*
 
 ## SCHEDULE
 
 **DUE DATE**: *Release 1.0*
-
-*any other schedule/staffing information you need*
