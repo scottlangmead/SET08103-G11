@@ -51,7 +51,7 @@ A Capital City report is requested from the user.
 ## EXTENSIONS
 
 1. If Data doesn't exist:
-    1. Enter correct location or inform database manager.
+    i. Enter correct location or inform database manager.
 
 ## SUB-VARIATIONS
 
