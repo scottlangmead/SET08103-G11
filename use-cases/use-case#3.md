@@ -50,8 +50,8 @@ A Capital City report is requested from the user
 
 ## EXTENSIONS
 
-If Data doesn't exist:
-  Enter correct location or inform database manager.
+1. If Data doesn't exist:
+    1. Enter correct location or inform database manager.
 
 ## SUB-VARIATIONS
 
