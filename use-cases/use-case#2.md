@@ -54,9 +54,8 @@ A request for a city report from the user.
 
 ## EXTENSIONS
 
-2. Data doesn't exist
-  - Enter a valid ammount and a valid location.
-
+2. **Data doesn't exist**:
+    1. Enter a valid ammount and a valid location.
 
 ## SUB-VARIATIONS
 
