@@ -4,7 +4,7 @@
 
 ### Goal in Context
 
-*A report on the Capital City in question displaying appropriate data:
+* A report on the Capital City in question displaying appropriate data:
 
 * Name
 * Country
@@ -28,11 +28,11 @@ The connected database contains all appropriate data linked to the Capital City 
 
 ### Success End Condition
 
-*Capital City Report is produced*
+* Capital City Report is produced*
 
 ### Failed End Condition
 
-*Capital City Report is not produced*
+* Capital City Report is not produced*
 
 ### Primary Actor
 
@@ -55,8 +55,8 @@ A Capital City report is requested from the user
 
 ## SUB-VARIATIONS
 
-*None.*
+* None.
 
 ## SCHEDULE
 
-**DUE DATE**: *Release 1.0*
+**DUE DATE**: * Release 1.0
