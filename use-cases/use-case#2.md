@@ -1,59 +1,69 @@
-# USE CASE: <number> <the name should be the goal as a short active verb phrase>
+# USE CASE: 2 Generate City Reports
 
 ## CHARACTERISTIC INFORMATION
 
 ### Goal in Context
 
-*a longer statement of the goal, if needed*
+A report on the city of any:
+- Continent
+- World
+- Region
+- Country
+- District
+
 
 ### Scope
 
-*what system is considered black-box under design*
+Company.
 
 ### Level
 
-*one of: Summary, Primary task, subfunction*
+Primary task.
 
 ### Preconditions
 
-*what we expect is already the state of the world*
+Database contains city data on all of the following:
+- The World
+- Continent
+- District
+- Region
+- Country
 
 ### Success End Condition
 
-*the state of the world upon successful completion*
+City report is produced.
 
 ### Failed End Condition
 
-*the state of the world if goal abandoned*
+No city report is produced.
 
 ### Primary Actor
 
-*a role name for the primary actor, or description*
+User.
 
 ### Trigger
 
-*the action upon the system that starts the use case, may be a time event*
+A request for a city report from the user.
 
 ## MAIN SUCCESS SCENARIO
+  
+1. Request made by the user.
+2. Data retrived from the database.
+3. A report produced.
 
-*put here the steps of the scenario from trigger to goal delivery, and any cleanup after*
-
-1. action description
 
 ## EXTENSIONS
 
-*put here the extensions, one at a time, each referring to the step of the main scenario*
+2. Data doesn't exist
+  - Enter a valid ammount and a valid location.
 
-1. **Condition**: action of sub use case
 
 ## SUB-VARIATIONS
 
-*put here the sub-variations that will cause eventual branching in the scenario
+None.
 
-1. list of sub-variations
 
 ## SCHEDULE
 
-**DUE DATE**: *date or release of deployment*
+**DUE DATE**: Release 1.0
 
-*any other schedule/staffing information you need*
