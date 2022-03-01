@@ -53,9 +53,9 @@ A request for a population report from the user.
 3. Produce report.
 
 ## EXTENSIONS
-
-2. Data doesn't exist.
-  1. Enter correct location or inform database manager.
+ 
+2. **Data doesn't exist**:
+    1. Enter correct location or inform database manager.
 
 ## SUB-VARIATIONS
 
