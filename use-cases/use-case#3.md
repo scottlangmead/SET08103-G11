@@ -4,19 +4,23 @@
 
 ### Goal in Context
 
-*A report on the capital city in question displaying name, country and population.*
+*A report on the Capital City in question displaying appropriate data:
+
+* Name
+* Country
+* City Population
 
 ### Scope
 
-*Company*
+Company
 
 ### Level
 
-*Primary Task*
+Primary Task
 
 ### Preconditions
 
-*The connected database contains all appropriate data linked to the Capital City Report:*
+The connected database contains all appropriate data linked to the Capital City Report:
 
 1. Country Name
 2. City Name
@@ -32,23 +36,22 @@
 
 ### Primary Actor
 
-*User*
+User
 
 ### Trigger
 
-*A Capital City report is requested from the user*
+A Capital City report is requested from the user
 
 ## MAIN SUCCESS SCENARIO
 
-*The following data is displayed within the Capital City Report:*
-
-1. Country Name
-2. City Name
-3. City Population
+1. Request for capital city report.
+2. Relevant data is retrieved from the database.
+3. Produce capital city report.
 
 ## EXTENSIONS
 
-1.
+If Data doesn't exist:
+  Enter correct location or inform database manager.
 
 ## SUB-VARIATIONS
 
