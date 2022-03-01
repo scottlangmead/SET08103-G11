@@ -4,7 +4,8 @@
 
 ### Goal in Context
 
-* A report on the Capital City in question displaying appropriate data:
+A report on the Capital City in question displaying appropriate data:
+
 * Name
 * Country
 * City Population
