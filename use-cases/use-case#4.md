@@ -1,59 +1,66 @@
-# USE CASE: <number> <the name should be the goal as a short active verb phrase>
+# USE CASE: 4 Generate Population Reports
 
 ## CHARACTERISTIC INFORMATION
 
 ### Goal in Context
 
-*a longer statement of the goal, if needed*
+A report on the population of any:
+* Continent
+* Country
+* District
+* Region
+* City including captials
+* The world.
 
 ### Scope
 
-*what system is considered black-box under design*
+Company.
 
 ### Level
 
-*one of: Summary, Primary task, subfunction*
+Primary task.
 
 ### Preconditions
 
-*what we expect is already the state of the world*
+Database contains population data on all of the following:
+* Continents
+* Countries
+* Districts
+* Regions
+* Cities including capitals
+* The world
 
 ### Success End Condition
 
-*the state of the world upon successful completion*
+Population report is produced.
 
 ### Failed End Condition
 
-*the state of the world if goal abandoned*
+No population report is produced.
 
 ### Primary Actor
 
-*a role name for the primary actor, or description*
+User.
 
 ### Trigger
 
-*the action upon the system that starts the use case, may be a time event*
+A request for a population report from the user.
 
 ## MAIN SUCCESS SCENARIO
 
-*put here the steps of the scenario from trigger to goal delivery, and any cleanup after*
-
-1. action description
+1. Request for population report.
+2. Relevant data is retrieved from the database.
+3. Produce report.
 
 ## EXTENSIONS
 
-*put here the extensions, one at a time, each referring to the step of the main scenario*
-
-1. **Condition**: action of sub use case
+2. Data doesn't exist.
+  1. Enter correct location or inform database manager.
 
 ## SUB-VARIATIONS
 
-*put here the sub-variations that will cause eventual branching in the scenario
-
-1. list of sub-variations
+None.
 
 ## SCHEDULE
 
-**DUE DATE**: *date or release of deployment*
-
-*any other schedule/staffing information you need*
+**DUE DATE**: Release 1.0
