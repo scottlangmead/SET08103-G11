@@ -5,18 +5,17 @@
 ### Goal in Context
 
 * A report on the Capital City in question displaying appropriate data:
-
 * Name
 * Country
 * City Population
 
 ### Scope
 
-Company
+Company.
 
 ### Level
 
-Primary Task
+Primary Task.
 
 ### Preconditions
 
@@ -28,19 +27,19 @@ The connected database contains all appropriate data linked to the Capital City 
 
 ### Success End Condition
 
-* Capital City Report is produced*
+Capital City Report is produced.
 
 ### Failed End Condition
 
-* Capital City Report is not produced*
+Capital City Report is not produced.
 
 ### Primary Actor
 
-User
+User.
 
 ### Trigger
 
-A Capital City report is requested from the user
+A Capital City report is requested from the user.
 
 ## MAIN SUCCESS SCENARIO
 
@@ -55,8 +54,8 @@ A Capital City report is requested from the user
 
 ## SUB-VARIATIONS
 
-* None.
+None.
 
 ## SCHEDULE
 
-**DUE DATE**: * Release 1.0
+**DUE DATE**: Release 1.0
