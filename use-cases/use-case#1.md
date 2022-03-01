@@ -50,7 +50,7 @@ A request on information about a country is produced
 ## EXTENSIONS
 
 2. The data doesn't exist in database
-| i. User inputs correct location, database manager is informed.
+|    i. User inputs correct location, database manager is informed.
 
 ## SUB-VARIATIONS
 
