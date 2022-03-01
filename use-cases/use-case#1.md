@@ -8,14 +8,14 @@ Generate a report with the following information:
 
 * Code
 * Name
-*  Continent
+* Continent
 * Region
 * Population
 * Capital
 
 ### Scope
 
-Company
+Company.
 
 ### Level
 
@@ -23,23 +23,23 @@ Primary task.
 
 ### Preconditions
 
-we know the country, database has information on the code, continent, region, population and capital
+We know the country, database has information on the code, continent, region, population and capital.
 
 ### Success End Condition
 
-Successful country report is produced 
+Successful country report is produced.
 
 ### Failed End Condition
 
-No report is produced
+No report is produced.
 
 ### Primary Actor
 
-User
+User.
 
 ### Trigger
 
-A request on information about a country is produced
+A request on information about a country is produced.
 
 ## MAIN SUCCESS SCENARIO
 
@@ -48,13 +48,13 @@ A request on information about a country is produced
 3. Report is produced
 
 ## EXTENSIONS
-
-2. The data doesn't exist in database
-|    i. User inputs correct location, database manager is informed.
+    
+2. **The data doesn't exist in database**:
+    1. User inputs correct location, database manager is informed.
 
 ## SUB-VARIATIONS
 
-none
+None.
 
 ## SCHEDULE
 
