@@ -10,20 +10,19 @@
 | Correct branches for GitFlow workflow created - includes master, develop, and release branches |   11-02-22   |   10-02-22   |
 | First release created on GitHub                                                                |   11-02-22   |   10-02-22   |
 | Code of Conduct defined                                                                        |   11-02-22   |   04-02-22   |
-| **Code Review 1**                                                                              | **11-02-22** | **11-02-22** |
-| Issues being used on GitHub                                                                    |              |              |
-| Tasks defined as user stories                                                                  |              |              |
-| Project integrated with Zube.io                                                                |              |              |
-| Kanban/Project Board being used                                                                |              |              |
-| Sprint boards being used                                                                       |              |              |
-| Full use cases defined                                                                         |              |              |
-| Use case diagram created                                                                       |              |              |
-| Project requirements met                                                                       |              |              |
-| **Code Review 2**                                                                              | **04-03-22** | **04-03-22** |
+| **CODE REVIEW 1**                                                                              | **11-02-22** | **11-02-22** |
+| Issues being used on GitHub                                                                    |   28-02-22   |   25-02-22   |
+| Tasks defined as user stories                                                                  |   28-02-22   |   25-02-22   |
+| Project integrated with Zube.io                                                                |   28-02-22   |   25-02-22   |
+| Kanban/Project Board being used                                                                |   28-02-22   |   25-02-22   |
+| Sprint boards being used                                                                       |   28-02-22   |   25-02-22   |
+| Full use cases defined                                                                         |   04-03-22   |   01-03-22   |
+| Use case diagram created                                                                       |   04-03-22   |   01-03-22   |
+| **CODE REVIEW 2**                                                                              | **11-03-22** |              |
 | Suitable unit tests defined                                                                    |              |              |
 | Suitable integration tests defined                                                             |              |              |
 | Tests running on GitHub Actions                                                                |              |              |
-| **Code Review 3**                                                                              | **25-03-22** | **25-03-22** |
+| **CODE REVIEW 3**                                                                              | **25-03-22** |              |
 | Deployment working                                                                             |              |              |
 | Bug reporting system set-up                                                                    |              |              |
-| **Code Review 4**                                                                              | **29-04-22** | **29-04-22** |
+| **CODE REVIEW 4**                                                                              | **29-04-22** |              |
