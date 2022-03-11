@@ -1,3 +1,9 @@
+/**
+ * Software Engineering Methods, SET08103
+ * Group 11: Scott Langmead, Rowen Peebles, Matthew Wilson and Md Saifullah
+ * Location: Edinburgh Napier University
+ */
+
 package com.napier.sem;
 
 import com.mongodb.MongoClient;
@@ -5,11 +11,7 @@ import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.MongoCollection;
 import org.bson.Document;
 
-/**
- * Software Engineering Methods, SET08103
- * Group 11: Scott Langmead, Rowen Peebles, Matthew Wilson and Md Saifullah
- * Location: Edinburgh Napier University
- */
+
 
 public class App
 {
