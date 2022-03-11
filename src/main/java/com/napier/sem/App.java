@@ -5,8 +5,18 @@ import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.MongoCollection;
 import org.bson.Document;
 
+/**
+ * Software Engineering Methods, SET08103
+ * Group 11: Scott Langmead, Rowen Peebles, Matthew Wilson and Md Saifullah
+ * Location: Edinburgh Napier University
+ */
+
 public class App
 {
+    /**
+     * Function: main
+     * Connects to MongoDB
+     */
     public static void main(String[] args)
     {
         // Connect to MongoDB
