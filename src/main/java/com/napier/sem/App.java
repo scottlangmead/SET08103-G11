@@ -19,8 +19,12 @@ public class App
         // Connect to database
         q.connect();
 
-        ArrayList<City> cities = q.getCitiesUnderID(5);
-        q.printCities(cities);
+        //ArrayList<City> cities = q.getCitiesUnderID(5);
+        //q.printCities(cities);
+
+        ArrayList<Country> countries = q.allCountriesGlobal();
+        q.printCountries(countries);
+
 
         // Disconnect from database
         q.disconnect();

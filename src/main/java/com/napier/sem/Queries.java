@@ -4,48 +4,51 @@ import java.util.ArrayList;
 
 public class Queries {
 
+    /**
+     *
+     * @return List of all countries in the world, ordered from largest to smallest
+     */
+    public ArrayList<Country> allCountriesGlobal()
+    {
+        return countryBaseQuery(
+                "SELECT country.Code, country.Name, country.Continent, country.Region, country.Population, city.Name AS 'Capital' "
+                + "FROM country LEFT JOIN city ON country.Capital = city.ID "
+                + " ORDER BY country.Population DESC ");
+    }
+
+    public static void printCountries(ArrayList<Country> countries)
+    {
+        if (countries == null)
+        {
+            System.out.println("No countries");
+            return;
+        }
+        // Print header
+        System.out.println(String.format("%-5s %-50s %-20s %-30s %-20s %-5s",
+                "Code", "Name", "Continent", "Region", "Population", "Capital"));
+        // Loop over all countries in the list
+        for (Country country : countries)
+        {
+            if (country == null)
+            {
+                continue;
+            }
+            System.out.println(String.format("%-5s %-50s %-20s %-30s %-20s %-5s",
+                    country.getCode(), country.getName(), country.getContinent(), country.getRegion(), country.getPopulation(), country.getCapital()));
+        }
+    }
+
+    /**
+     *
+     * @param ID
+     * @return
+     */
     public ArrayList<City> getCitiesUnderID(int ID)
     {
-        // Holds a list of cities
-        ArrayList<City> cities = new ArrayList<City>();
-
-        try
-        {
-            // Create an SQL statement
-            Statement stmt = con.createStatement();
-            // Create string for SQL statement
-            String strSelect =
+        return cityBaseQuery(
                 "SELECT ID, Name, CountryCode, District, Population "
-                    + "FROM city "
-                    + "WHERE ID < " + ID;
-            // Execute SQL statement
-            ResultSet rset = stmt.executeQuery(strSelect);
-
-            while (rset.next())
-            {
-                // Define city
-                City city = new City();
-
-                // Extract data from SQL result
-                city.setId(rset.getInt("ID"));
-                city.setName(rset.getString("Name"));
-                city.setCountryCode(rset.getString("CountryCode"));
-                city.setDistrict(rset.getString("District"));
-                city.setPopulation(rset.getInt("Population"));
-
-                // Add city to list
-                cities.add(city);
-            }
-
-            // Return list of cities
-            return cities;
-        }
-        catch (Exception e)
-        {
-            System.out.println(e.getMessage());
-            System.out.println("Failed to retrieve city details");
-            return null;
-        }
+                + "FROM city "
+                + "WHERE ID < " + ID);
     }
 
     public static void printCities(ArrayList<City> cities)
@@ -65,6 +68,87 @@ public class Queries {
                 continue;
             }
             System.out.println(String.format("%-30s %-30s %-35s %-20s", city.getName(), city.getCountryCode(), city.getDistrict(), city.getPopulation()));
+        }
+    }
+
+    public ArrayList<Country> countryBaseQuery(String query)
+    {
+        // Holds a list of queried results
+        ArrayList<Country> countries = new ArrayList<Country>();
+
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(query);
+
+            while (rset.next())
+            {
+                // Define city
+                Country country = new Country();
+
+                // Extract data from SQL query result
+                country.setCode(rset.getString("Code"));
+                country.setName(rset.getString("Name"));
+                country.setContinent(rset.getString("Continent"));
+                country.setRegion(rset.getString("Region"));
+                country.setPopulation(rset.getInt("Population"));
+
+                // NOTE: this is set to string as we are taking it currently from the city table
+                country.setCapital(rset.getString("Capital"));
+
+                // Add city to list
+                countries.add(country);
+            }
+
+            // Return list of cities
+            return countries;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to retrieve country details");
+            return null;
+        }
+    }
+
+    public ArrayList<City> cityBaseQuery(String query)
+    {
+        // Holds a list of queried results
+        ArrayList<City> cities = new ArrayList<City>();
+
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(query);
+
+            while (rset.next())
+            {
+                // Define city
+                City city = new City();
+
+                // Extract data from SQL query result
+                city.setId(rset.getInt("ID"));
+                city.setName(rset.getString("Name"));
+                city.setCountryCode(rset.getString("CountryCode"));
+                city.setDistrict(rset.getString("District"));
+                city.setPopulation(rset.getInt("Population"));
+
+                // Add city to list
+                cities.add(city);
+            }
+
+            // Return list of cities
+            return cities;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to retrieve city details");
+            return null;
         }
     }
 
