@@ -28,7 +28,7 @@ public class City {
 
     /**
      * Changes the city ID
-     * @param id to be set
+     * @param id
      */
     public void setId(int id) {
         this.id = id;
@@ -43,7 +43,7 @@ public class City {
 
     /**
      * Changes the city name
-     * @param name to be set
+     * @param name
      */
     public void setName(String name) {
         this.name = name;
@@ -58,14 +58,14 @@ public class City {
 
     /**
      * Changes the country code
-     * @param countryCode code to be set
+     * @param countryCode
      */
     public void setCountryCode(String countryCode) {
         this.countryCode = countryCode;
     }
     /**
      * Gets the country code of the city
-     * @return countryCode for city
+     * @return Country code for city
      */
     public String getCountryCode() {
         return countryCode;
@@ -73,7 +73,7 @@ public class City {
 
     /**
      * Changes the district of the city
-     * @param district to be set
+     * @param district
      */
     public void setDistrict(String district) {
         this.district = district;
@@ -88,7 +88,7 @@ public class City {
 
     /**
      * Changes the population of the city
-     * @param population to be set
+     * @param population
      */
     public void setPopulation(int population) {
         this.population = population;

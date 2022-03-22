@@ -23,7 +23,12 @@ public class App
 
 
         ArrayList<City> cities = q.getCitiesUnderID(5);
-        q.displayCities(cities);
+        q.printCities(cities);
+
+
+
+
+
 
 
 
@@ -37,4 +42,14 @@ public class App
         // Disconnect from database
         q.disconnect();
     }
+
+
+
+
+
+
+
+
+
+
 }

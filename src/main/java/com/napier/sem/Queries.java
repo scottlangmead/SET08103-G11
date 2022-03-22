@@ -7,7 +7,7 @@ public class Queries {
     public ArrayList<City> getCitiesUnderID(int ID)
     {
         // Holds a list of cities
-        ArrayList<City> cities = new ArrayList<>();
+        ArrayList<City> cities = new ArrayList<City>();
 
         try
         {
@@ -21,11 +21,11 @@ public class Queries {
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
 
-            // Define city
-            City city = new City();
-
             while (rset.next())
             {
+                // Define city
+                City city = new City();
+
                 // Extract data from SQL result
                 city.setId(rset.getInt("ID"));
                 city.setName(rset.getString("Name"));
@@ -48,77 +48,25 @@ public class Queries {
         }
     }
 
-
-    public void displayCities(ArrayList<City> cities)
+    public static void printCities(ArrayList<City> cities)
     {
-
-        //ArrayList<City> cities = new ArrayList<>();
-
-
-        //City city = new City();
-
-        /*
-        city.id = 1;
-        city.name = "Edinburgh";
-        city.countryCode = "1";
-        city.district = "A";
-        city.population = 3333;
-        cities.add(city);
-
-
-        city.id = 2;
-        city.name = "Glasgow";
-        city.countryCode = "2";
-        city.district = "B";
-        city.population = 666666;
-        cities.add(city);
-
-
-        city.id = 3;
-        city.name = "Dundee";
-        city.countryCode = "3";
-        city.district = "C";
-        city.population = 436346346;
-        cities.add(city);
-        */
-
-
-
-        if (cities != null || !cities.isEmpty())
+        if (cities == null)
         {
-            // print titles
-            System.out.println(String.format("%4s %-4s %-44s %-14s %-25s", "ID", "Name", "CountryCode", "District", "Population"));
-
-            for (City c : cities)
-            {
-                if (c == null)
-                    continue;
-
-
-
-
-
-                String cityText = String.format("%4s %-4s %-44s %-14s %-25s",
-                    c.getId(), c.getName(), c.getCountryCode(), c.getDistrict(), c.getPopulation());
-
-                System.out.println(cityText);
-            }
-        }
-        else
             System.out.println("No cities");
+            return;
+        }
+        // Print header
+        System.out.println(String.format("%-30s %-30s %-35s %-20s", "Name", "Country", "District", "Population"));
+        // Loop over all countries in the list
+        for (City city : cities)
+        {
+            if (city == null)
+            {
+                continue;
+            }
+            System.out.println(String.format("%-30s %-30s %-35s %-20s", city.getName(), city.getCountryCode(), city.getDistrict(), city.getPopulation()));
+        }
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
     /**
      * Connection to MySQL database.
