@@ -4,98 +4,102 @@ package com.napier.sem;
  * Attributes of a City
  * @author Scott Langmead, Matthew Wilson, Md Saifullah
  */
-public class City {
+public class City
+{
     /**
-     * City ID
+     * Default constructor
+     */
+    public City() {}
+
+    /**
+     * City's ID
      */
     private int id;
     /**
-     * City Name
+     * City's Name
      */
     private String name;
     /**
-     * City Country Code
+     * City's Country Code
      */
     private String countryCode;
     /**
-     * City District
+     * City's District
      */
     private String district;
     /**
-     * City Population
+     * City's Population
      */
     private int population;
 
     /**
-     * Changes the city ID
+     * Updates the City ID
      * @param id
      */
-    public void setId(int id) {
-        this.id = id;
-    }
+    public void setId(int id) { this.id = id; }
     /**
-     * Gets the city ID
-     * @return city id
+     * Retrieves the City ID
+     * @return City ID
      */
     public int getId() {
         return id;
     }
 
     /**
-     * Changes the city name
+     * Updates the City Name
      * @param name
      */
     public void setName(String name) {
         this.name = name;
     }
     /**
-     * Changes the name of the country
-     * @return city name
+     * Retrieves the City Name
+     * @return City Name
      */
     public String getName() {
         return name;
     }
 
     /**
-     * Changes the country code
+     * Updates the Country Code of the City
      * @param countryCode
      */
     public void setCountryCode(String countryCode) {
         this.countryCode = countryCode;
     }
     /**
-     * Gets the country code of the city
-     * @return Country code for city
+     * Retrieves the Country Code of the City
+     * @return Country Code of City
      */
     public String getCountryCode() {
         return countryCode;
     }
 
     /**
-     * Changes the district of the city
+     * Updates the City District
      * @param district
      */
     public void setDistrict(String district) {
         this.district = district;
     }
     /**
-     * Gets the district of the city
-     * @return district for city
+     * Retrieves the City District
+     * @return City District
      */
     public String getDistrict() {
         return district;
     }
 
     /**
-     * Changes the population of the city
+     * Updates the City Population
      * @param population
      */
     public void setPopulation(int population) {
         this.population = population;
     }
     /**
-     * Gets the population of the city
-     * @return population for the city
+     * Retrieves the City Population
+     * @return City Population
      */
     public int getPopulation() {
         return population;

@@ -19,37 +19,10 @@ public class App
         // Connect to database
         q.connect();
 
-
-
-
         ArrayList<City> cities = q.getCitiesUnderID(5);
         q.printCities(cities);
-
-
-
-
-
-
-
-
-        // Basic function to test database connection
-        //City city = q.getCity(3);
-        //q.displayCity(city);
-
-
-
 
         // Disconnect from database
         q.disconnect();
     }
-
-
-
-
-
-
-
-
-
-
 }
