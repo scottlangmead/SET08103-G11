@@ -9,24 +9,30 @@ public class Queries {
      */
     public ArrayList<Country> allCountriesGlobal()
     {
+        System.out.println("All the countries in the world organised by largest population to smallest:");
         return countryBaseQuery(
                 "SELECT country.Code, country.Name, country.Continent, country.Region, country.Population, city.Name AS 'Capital' "
                 + "FROM country LEFT JOIN city ON country.Capital = city.ID "
-                + " ORDER BY country.Population DESC ", 0);
+                + "ORDER BY country.Population DESC ", 0);
     }
     /**
      * @return All the countries in a continent organised by largest population to smallest
      */
     public ArrayList<Country> allCountriesContinent()
     {
+        System.out.println("All the countries in a continent organised by largest population to smallest:");
         return countryBaseQuery(
-                "", 0);
+                "SELECT country.Code, country.Name, country.Continent, country.Region, country.Population, city.Name AS 'Capital' "
+                + "FROM country LEFT JOIN city ON country.Capital = city.ID "
+                + "WHERE country.Continent = 'Asia' "
+                + "ORDER BY country.Population DESC ", 0);
     }
     /**
      * @return All the countries in a region organised by largest population to smallest
      */
     public ArrayList<Country> allCountriesRegion()
     {
+        System.out.println("All the countries in a region organised by largest population to smallest:");
         return countryBaseQuery(
                 "", 0);
     }
@@ -37,8 +43,9 @@ public class Queries {
      */
     public ArrayList<Country> topCountriesGlobal(int n)
     {
+        System.out.println("The top " + n + " populated countries in the world:");
         return countryBaseQuery(
-                "", 0);
+                "", n);
     }
     /**
      * @param n How many countries are to be displayed
@@ -46,8 +53,9 @@ public class Queries {
      */
     public ArrayList<Country> topCountriesContinent(int n)
     {
+        System.out.println("The top " + n + " populated countries in a continent:");
         return countryBaseQuery(
-                "", 0);
+                "", n);
     }
     /**
      * @param n How many countries are to be displayed
@@ -55,8 +63,9 @@ public class Queries {
      */
     public ArrayList<Country> topCountriesRegion(int n)
     {
+        System.out.println("The top " + n + " populated countries in a region:");
         return countryBaseQuery(
-                "", 0);
+                "", n);
     }
 
     /**
@@ -91,8 +100,7 @@ public class Queries {
                 country.setContinent(rset.getString("Continent"));
                 country.setRegion(rset.getString("Region"));
                 country.setPopulation(rset.getInt("Population"));
-
-                // NOTE: this is set to string as we are taking it currently from the city table
+                // NOTE: We are taking Capital from the city table, therefore it's a String not Int
                 country.setCapital(rset.getString("Capital"));
 
                 // Add city to list
