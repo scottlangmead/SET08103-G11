@@ -2,6 +2,10 @@ package com.napier.sem;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * Contains functions to interact with the database.
+ * @author Scott Langmead, Matthew Wilson, Md Saifullah
+ */
 public class Queries {
 
     /**
@@ -20,7 +24,7 @@ public class Queries {
      */
     public ArrayList<Country> allCountriesContinent()
     {
-        System.out.println("All the countries in a continent organised by largest population to smallest:");
+        System.out.println("All the countries in a continent organised by largest population to smallest: (Asia)");
         return countryBaseQuery(
                 "SELECT country.Code, country.Name, country.Continent, country.Region, country.Population, city.Name AS 'Capital' "
                 + "FROM country LEFT JOIN city ON country.Capital = city.ID "
@@ -32,9 +36,12 @@ public class Queries {
      */
     public ArrayList<Country> allCountriesRegion()
     {
-        System.out.println("All the countries in a region organised by largest population to smallest:");
+        System.out.println("All the countries in a region organised by largest population to smallest: (Caribbean)");
         return countryBaseQuery(
-                "", 0);
+                "SELECT country.Code, country.Name, country.Continent, country.Region, country.Population, city.Name AS 'Capital' "
+                + "FROM country LEFT JOIN city ON country.Capital = city.ID "
+                + "WHERE country.Region = 'Caribbean' "
+                + "ORDER BY country.Population DESC ", 0);
     }
 
     /**

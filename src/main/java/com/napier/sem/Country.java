@@ -1,7 +1,7 @@
 package com.napier.sem;
 
 /**
- * Attributes of a Country
+ * Attributes of a Country.
  * @author Scott Langmead, Matthew Wilson, Md Saifullah
  */
 public class Country

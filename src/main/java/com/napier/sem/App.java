@@ -27,15 +27,14 @@ public class App
         */
 
         // All the countries in a continent organised by largest population to smallest (Asia)
+        /*
         ArrayList<Country> countries = q.allCountriesContinent();
         q.printCountries(countries);
-
+         */
 
         // All the countries in a region organised by largest population to smallest
-        /*
         ArrayList<Country> countries = q.allCountriesRegion();
         q.printCountries(countries);
-         */
 
         // The top N populated countries in the world where N is provided by the user
         /*
