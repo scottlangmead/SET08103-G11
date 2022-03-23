@@ -116,6 +116,43 @@ public class App
         ArrayList<City> topCitiesDistrict = q.topCitiesDistrict("California", 6);
         q.printCities(topCitiesDistrict);
 
+        System.out.print("\n\n\n\n\n"); // Space out results
+
+        // All the capital cities in the world organised by largest population to smallest
+        ArrayList<City> allCapitalsGlobal = q.allCapitalsGlobal();
+        q.printCapitals(allCapitalsGlobal);
+
+
+        System.out.print("\n\n\n\n\n"); // Space out results
+
+        // All the capital cities in a continent organised by largest population to smallest
+        ArrayList<City> allCapitalsContinent = q.allCapitalsContinent("Europe");
+        q.printCapitals(allCapitalsContinent);
+
+        System.out.print("\n\n\n\n\n"); // Space out results
+
+        // All the capital cities in the world organised by largest population to smallest
+        ArrayList<City> allCapitalsRegion = q.allCapitalsRegion("Eastern Europe");
+        q.printCapitals(allCapitalsRegion);
+
+        System.out.print("\n\n\n\n\n"); // Space out results
+
+        // The top N populated capital cities in the world where N is provided by the user
+        ArrayList<City> topCapitalsGlobal = q.topCapitalsGlobal(10);
+        q.printCapitals(topCapitalsGlobal);
+
+        System.out.print("\n\n\n\n\n"); // Space out results
+
+        // The top N populated capital cities in a continent where N is provided by the user
+        ArrayList<City> topCapitalsContinent = q.topCapitalsContinent("South America", 8);
+        q.printCapitals(topCapitalsContinent);
+
+        System.out.print("\n\n\n\n\n"); // Space out results
+
+        // The top N populated capital cities in a region where N is provided by the user
+        ArrayList<City> topCapitalsRegion = q.topCapitalsRegion("Middle East", 12);
+        q.printCapitals(topCapitalsRegion);
+
         // Disconnect from database
         q.disconnect();
     }

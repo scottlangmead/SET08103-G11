@@ -16,8 +16,8 @@ public class Queries {
         System.out.println("All the countries in the world organised by largest population to smallest:");
         return countryBaseQuery(
                 "SELECT country.Code, country.Name, country.Continent, country.Region, country.Population, city.Name AS 'Capital' "
-                + "FROM country LEFT JOIN city ON country.Capital = city.ID "
-                + "ORDER BY country.Population DESC ", 0);
+                        + "FROM country LEFT JOIN city ON country.Capital = city.ID "
+                        + "ORDER BY country.Population DESC ", 0);
     }
     /**
      * @param continent The continent to be displayed
@@ -28,9 +28,9 @@ public class Queries {
         System.out.println("All the countries in " + continent + ", organised by largest population to smallest:");
         return countryBaseQuery(
                 "SELECT country.Code, country.Name, country.Continent, country.Region, country.Population, city.Name AS 'Capital' "
-                + "FROM country LEFT JOIN city ON country.Capital = city.ID "
-                + "WHERE country.Continent = '" + continent + "' "
-                + "ORDER BY country.Population DESC ", 0);
+                        + "FROM country LEFT JOIN city ON country.Capital = city.ID "
+                        + "WHERE country.Continent = '" + continent + "' "
+                        + "ORDER BY country.Population DESC ", 0);
     }
     /**
      * @param region The region to be displayed
@@ -41,9 +41,9 @@ public class Queries {
         System.out.println("All the countries in the " + region + ", organised by largest population to smallest:");
         return countryBaseQuery(
                 "SELECT country.Code, country.Name, country.Continent, country.Region, country.Population, city.Name AS 'Capital' "
-                + "FROM country LEFT JOIN city ON country.Capital = city.ID "
-                + "WHERE country.Region = '" + region + "' "
-                + "ORDER BY country.Population DESC ", 0);
+                        + "FROM country LEFT JOIN city ON country.Capital = city.ID "
+                        + "WHERE country.Region = '" + region + "' "
+                        + "ORDER BY country.Population DESC ", 0);
     }
 
     /**
@@ -55,8 +55,8 @@ public class Queries {
         System.out.println("The top " + n + " populated countries in the world:");
         return countryBaseQuery(
                 "SELECT country.Code, country.Name, country.Continent, country.Region, country.Population, city.Name AS 'Capital' "
-                + "FROM country LEFT JOIN city ON country.Capital = city.ID "
-                + "ORDER BY country.Population DESC ", n);
+                        + "FROM country LEFT JOIN city ON country.Capital = city.ID "
+                        + "ORDER BY country.Population DESC ", n);
     }
     /**
      * @param n How many countries are to be displayed
@@ -68,9 +68,9 @@ public class Queries {
         System.out.println("The top " + n + " populated countries in " + continent + ":");
         return countryBaseQuery(
                 "SELECT country.Code, country.Name, country.Continent, country.Region, country.Population, city.Name AS 'Capital' "
-                + "FROM country LEFT JOIN city ON country.Capital = city.ID "
-                + "WHERE country.Continent = '" + continent + "' "
-                + "ORDER BY country.Population DESC ", n);
+                        + "FROM country LEFT JOIN city ON country.Capital = city.ID "
+                        + "WHERE country.Continent = '" + continent + "' "
+                        + "ORDER BY country.Population DESC ", n);
     }
     /**
      * @param n How many countries are to be displayed
@@ -82,9 +82,9 @@ public class Queries {
         System.out.println("The top " + n + " populated countries in the " + region + ":");
         return countryBaseQuery(
                 "SELECT country.Code, country.Name, country.Continent, country.Region, country.Population, city.Name AS 'Capital' "
-                + "FROM country LEFT JOIN city ON country.Capital = city.ID "
-                + "WHERE country.Region = '" + region + "' "
-                + "ORDER BY country.Population DESC ", n);
+                        + "FROM country LEFT JOIN city ON country.Capital = city.ID "
+                        + "WHERE country.Region = '" + region + "' "
+                        + "ORDER BY country.Population DESC ", n);
     }
 
     /**
@@ -95,8 +95,8 @@ public class Queries {
         System.out.println("All the cities in the world organised by largest population to smallest:");
         return cityBaseQuery(
                 "SELECT city.Name, country.Name AS 'Country', city.District, city.Population "
-                + "FROM city JOIN country ON city.CountryCode = country.Code "
-                + "ORDER BY city.Population DESC ", 0);
+                        + "FROM city JOIN country ON city.CountryCode = country.Code "
+                        + "ORDER BY city.Population DESC ", 0);
     }
     /**
      * @param continent The continent to be displayed
@@ -107,9 +107,9 @@ public class Queries {
         System.out.println("All the cities in " + continent + " organised by largest population to smallest:");
         return cityBaseQuery(
                 "SELECT city.Name, country.Name AS 'Country', city.District, city.Population "
-                + "FROM city JOIN country ON city.CountryCode = country.Code "
-                + "WHERE country.Continent = '" + continent + "' "
-                + "ORDER BY city.Population DESC ", 0);
+                        + "FROM city JOIN country ON city.CountryCode = country.Code "
+                        + "WHERE country.Continent = '" + continent + "' "
+                        + "ORDER BY city.Population DESC ", 0);
     }
     /**
      * @param region The region to be displayed
@@ -120,9 +120,9 @@ public class Queries {
         System.out.println("All the cities in " + region + " organised by largest population to smallest:");
         return cityBaseQuery(
                 "SELECT city.Name, country.Name AS 'Country', city.District, city.Population "
-                + "FROM city JOIN country ON city.CountryCode = country.Code "
-                + "WHERE country.Region = '" + region + "' "
-                + "ORDER BY city.Population DESC ", 0);
+                        + "FROM city JOIN country ON city.CountryCode = country.Code "
+                        + "WHERE country.Region = '" + region + "' "
+                        + "ORDER BY city.Population DESC ", 0);
     }
     /**
      * @param country The region to be displayed
@@ -133,9 +133,9 @@ public class Queries {
         System.out.println("All the cities in the " + country + " organised by largest population to smallest:");
         return cityBaseQuery(
                 "SELECT city.Name, country.Name AS 'Country', city.District, city.Population "
-                + "FROM city JOIN country ON city.CountryCode = country.Code "
-                + "WHERE country.Name = '" + country + "' "
-                + "ORDER BY city.Population DESC ", 0);
+                        + "FROM city JOIN country ON city.CountryCode = country.Code "
+                        + "WHERE country.Name = '" + country + "' "
+                        + "ORDER BY city.Population DESC ", 0);
     }
     /**
      * @param district The district to be displayed
@@ -146,9 +146,9 @@ public class Queries {
         System.out.println("All the cities in " + district + " organised by largest population to smallest:");
         return cityBaseQuery(
                 "SELECT city.Name, country.Name AS 'Country', city.District, city.Population "
-                + "FROM city JOIN country ON city.CountryCode = country.Code "
-                + "WHERE city.District = '" + district + "' "
-                + "ORDER BY city.Population DESC ", 0);
+                        + "FROM city JOIN country ON city.CountryCode = country.Code "
+                        + "WHERE city.District = '" + district + "' "
+                        + "ORDER BY city.Population DESC ", 0);
     }
 
     /**
@@ -160,8 +160,8 @@ public class Queries {
         System.out.println("The top " + n + " populated cities in the world:");
         return cityBaseQuery(
                 "SELECT city.Name, country.Name AS 'Country', city.District, city.Population "
-                + "FROM city JOIN country ON city.CountryCode = country.Code "
-                + "ORDER BY city.Population DESC ", n);
+                        + "FROM city JOIN country ON city.CountryCode = country.Code "
+                        + "ORDER BY city.Population DESC ", n);
     }
     /**
      * @param continent The continent to be displayed
@@ -173,9 +173,9 @@ public class Queries {
         System.out.println("The top " + n + " populated cities in the " + continent + ":");
         return cityBaseQuery(
                 "SELECT city.Name, country.Name AS 'Country', city.District, city.Population "
-                + "FROM city JOIN country ON city.CountryCode = country.Code "
-                + "WHERE country.Continent = '" + continent + "' "
-                + "ORDER BY city.Population DESC ", n);
+                        + "FROM city JOIN country ON city.CountryCode = country.Code "
+                        + "WHERE country.Continent = '" + continent + "' "
+                        + "ORDER BY city.Population DESC ", n);
     }
     /**
      * @param region The region to be displayed
@@ -187,9 +187,9 @@ public class Queries {
         System.out.println("The top " + n + " populated cities in " + region + ":");
         return cityBaseQuery(
                 "SELECT city.Name, country.Name AS 'Country', city.District, city.Population "
-                + "FROM city JOIN country ON city.CountryCode = country.Code "
-                + "WHERE country.Region = '" + region + "' "
-                + "ORDER BY city.Population DESC ", n);
+                        + "FROM city JOIN country ON city.CountryCode = country.Code "
+                        + "WHERE country.Region = '" + region + "' "
+                        + "ORDER BY city.Population DESC ", n);
     }
     /**
      * @param country The region to be displayed
@@ -201,9 +201,9 @@ public class Queries {
         System.out.println("The top " + n + " populated cities in " + country +":");
         return cityBaseQuery(
                 "SELECT city.Name, country.Name AS 'Country', city.District, city.Population "
-                + "FROM city JOIN country ON city.CountryCode = country.Code "
-                + "WHERE country.Name = '" + country + "' "
-                + "ORDER BY city.Population DESC ", n);
+                        + "FROM city JOIN country ON city.CountryCode = country.Code "
+                        + "WHERE country.Name = '" + country + "' "
+                        + "ORDER BY city.Population DESC ", n);
     }
     /**
      * @param district The district to be displayed
@@ -215,9 +215,89 @@ public class Queries {
         System.out.println("The top " + n + " populated cities in " + district + ":");
         return cityBaseQuery(
                 "SELECT city.Name, country.Name AS 'Country', city.District, city.Population "
-                + "FROM city JOIN country ON city.CountryCode = country.Code "
-                + "WHERE city.District = '" + district + "' "
-                + "ORDER BY city.Population DESC ", n);
+                        + "FROM city JOIN country ON city.CountryCode = country.Code "
+                        + "WHERE city.District = '" + district + "' "
+                        + "ORDER BY city.Population DESC ", n);
+    }
+
+    /**
+     * @return All the capital cities in the world organised by largest population to smallest
+     */
+    public ArrayList<City> allCapitalsGlobal()
+    {
+        System.out.println("All the capital cities in the world organised by largest population to smallest:");
+        return capitalBaseQuery(
+                "SELECT city.Name, country.Name AS 'Country', city.Population "
+                        + "FROM city JOIN country ON city.CountryCode = country.Code "
+                        + "WHERE city.ID = country.Capital "
+                        + "ORDER BY city.Population DESC ", 0);
+    }
+    /**
+     * @param continent The continent to be displayed
+     * @return All the capital cities in a continent organised by largest population to smallest
+     */
+    public ArrayList<City> allCapitalsContinent(String continent)
+    {
+        System.out.println("All the capital cities in " + continent + " organised by largest population to smallest:");
+        return capitalBaseQuery(
+                "SELECT city.Name, country.Name AS 'Country', city.Population "
+                        + "FROM city JOIN country ON city.CountryCode = country.Code "
+                        + "WHERE city.ID = country.Capital AND country.Continent = '" + continent + "' "
+                        + "ORDER BY city.Population DESC ", 0);
+    }
+    /**
+     * @param region The region to be displayed
+     * @return All the capital cities in a region organised by largest to smallest
+     */
+    public ArrayList<City> allCapitalsRegion(String region)
+    {
+        System.out.println("All the capital cities in a " + region + " organised by largest to smallest:");
+        return capitalBaseQuery(
+                "SELECT city.Name, country.Name AS 'Country', city.Population "
+                        + "FROM city JOIN country ON city.CountryCode = country.Code "
+                        + "WHERE city.ID = country.Capital AND country.Region = '" + region + "' "
+                        + "ORDER BY city.Population DESC ", 0);
+    }
+    /**
+     * @param n How many capitals are to be displayed
+     * @return The top N populated capital cities in the world where N is provided by the user
+     */
+    public ArrayList<City> topCapitalsGlobal(int n)
+    {
+        System.out.println("The top " + n + " populated capital cities in the world:");
+        return capitalBaseQuery(
+                "SELECT city.Name, country.Name AS 'Country', city.Population "
+                        + "FROM city JOIN country ON city.CountryCode = country.Code "
+                        + "WHERE city.ID = country.Capital "
+                        + "ORDER BY city.Population DESC ", n);
+    }
+    /**
+     * @param continent The continent to be displayed
+     * @param n How many capitals are to be displayed
+     * @return The top N populated capital cities in a continent where N is provided by the user
+     */
+    public ArrayList<City> topCapitalsContinent(String continent, int n)
+    {
+        System.out.println("The top " + n + " populated capital cities in " + continent + ":");
+        return capitalBaseQuery(
+                "SELECT city.Name, country.Name AS 'Country', city.Population "
+                        + "FROM city JOIN country ON city.CountryCode = country.Code "
+                        + "WHERE city.ID = country.Capital AND country.Continent = '" + continent + "' "
+                        + "ORDER BY city.Population DESC ", n);
+    }
+    /**
+     * @param region The region to be displayed
+     * @param n How many capitals are to be displayed
+     * @return The top N populated capital cities in a region where N is provided by the user
+     */
+    public ArrayList<City> topCapitalsRegion(String region, int n)
+    {
+        System.out.println("The top " + n + " populated capital cities in the " + region + ":");
+        return capitalBaseQuery(
+                "SELECT city.Name, country.Name AS 'Country', city.Population "
+                        + "FROM city JOIN country ON city.CountryCode = country.Code "
+                        + "WHERE city.ID = country.Capital AND country.Region = '" + region + "' "
+                        + "ORDER BY city.Population DESC ", n);
     }
 
     /**
@@ -345,6 +425,66 @@ public class Queries {
             return null;
         }
     }
+    /**
+     * Searches database using provided SQL query.
+     * @param query SQL query
+     * @param n How many capitals are to be displayed (0 = all)
+     * @return List of results (capitals)
+     */
+    public ArrayList<City> capitalBaseQuery(String query, int n)
+    {
+        // Holds a list of queried results
+        ArrayList<City> capitals = new ArrayList<City>();
+
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(query);
+
+            // Counts the number of printed results
+            int counter = 0;
+
+            while (rset.next())
+            {
+                // Define city
+                City city = new City();
+
+                // Extract data from SQL query result
+                city.setName(rset.getString("Name"));
+                city.setCountryCode(rset.getString("Country"));
+                city.setPopulation(rset.getInt("Population"));
+
+                // Add city to list
+                capitals.add(city);
+
+                // If display specified number of results
+                if (n > 0)
+                {
+                    // Increment counter
+                    counter++;
+
+                    // If specified number of results is reached
+                    if (counter == n)
+                        break;  // End loop
+                }
+            }
+
+            // Check if less cities than n
+            if (capitals.size() < n)
+                System.out.println("WARNING: There aren't enough capitals to fulfill " + n + " results.");
+
+            // Return list of cities
+            return capitals;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to retrieve city details");
+            return null;
+        }
+    }
 
     /**
      * Prints Country data.
@@ -390,6 +530,28 @@ public class Queries {
                 continue;
 
             System.out.println(String.format("%-45s %-45s %-30s %-10s", city.getName(), city.getCountryCode(), city.getDistrict(), city.getPopulation()));
+        }
+    }
+    /**
+     * Prints Capital City data.
+     * @param capitals List to be printed
+     */
+    public static void printCapitals(ArrayList<City> capitals)
+    {
+        if (capitals == null)
+        {
+            System.out.println("No capitals");
+            return;
+        }
+        // Print header
+        System.out.println(String.format("%-45s %-45s %-10s", "Name", "Country", "Population"));
+        // Loop over all countries in the list
+        for (City city : capitals)
+        {
+            if (city == null)
+                continue;
+
+            System.out.println(String.format("%-45s %-45s %-10s", city.getName(), city.getCountryCode(), city.getPopulation()));
         }
     }
 
