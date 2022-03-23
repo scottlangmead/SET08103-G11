@@ -19,41 +19,42 @@ public class App
         // Connect to database
         q.connect();
 
+        System.out.print("\n\n\n\n\n"); // Space out results
 
         // All the countries in the world organised by largest population to smallest
-        /*
-        ArrayList<Country> countries = q.allCountriesGlobal();
-        q.printCountries(countries);
-        */
+        ArrayList<Country> allCountriesGlobal = q.allCountriesGlobal();
+        q.printCountries(allCountriesGlobal);
 
-        // All the countries in a continent organised by largest population to smallest (Asia)
-        /*
-        ArrayList<Country> countries = q.allCountriesContinent();
-        q.printCountries(countries);
-         */
+        System.out.print("\n\n\n\n\n"); // Space out results
+
+        // All the countries in a continent organised by largest population to smallest
+        ArrayList<Country> allCountriesContinent = q.allCountriesContinent("Asia");
+        q.printCountries(allCountriesContinent);
+
+        System.out.print("\n\n\n\n\n"); // Space out results
+
 
         // All the countries in a region organised by largest population to smallest
-        ArrayList<Country> countries = q.allCountriesRegion();
-        q.printCountries(countries);
+        ArrayList<Country> allCountriesRegion = q.allCountriesRegion("Caribbean");
+        q.printCountries(allCountriesRegion);
+
+        System.out.print("\n\n\n\n\n"); // Space out results
 
         // The top N populated countries in the world where N is provided by the user
-        /*
-        ArrayList<Country> countries = q.topCountriesGlobal(0);
+        ArrayList<Country> countries = q.topCountriesGlobal(10);
         q.printCountries(countries);
-         */
+
+        System.out.print("\n\n\n\n\n"); // Space out results
 
         // The top N populated countries in a continent where N is provided by the user
-        /*
-        ArrayList<Country> countries = q.topCountriesContinent(0);
-        q.printCountries(countries);
-         */
+        ArrayList<Country> topCountriesContinent = q.topCountriesContinent(15, "Europe");
+        q.printCountries(topCountriesContinent);
+
+        System.out.print("\n\n\n\n\n"); // Space out results
 
         // The top N populated countries in a region where N is provided by the user
-        /*
-        ArrayList<Country> countries = q.topCountriesRegion(0);
-        q.printCountries(countries);
-        */
-
+        ArrayList<Country> topCountriesRegion = q.topCountriesRegion(5, "Middle East");
+        q.printCountries(topCountriesRegion);
 
         // Disconnect from database
         q.disconnect();
