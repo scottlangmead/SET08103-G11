@@ -3,6 +3,11 @@ package com.napier.sem;
 public class Language
 {
     /**
+     * Default constructor
+     */
+    public Language() {}
+
+    /**
      * Language's Country Code
      */
     private String code;
