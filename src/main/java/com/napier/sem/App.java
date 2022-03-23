@@ -13,7 +13,7 @@ public class App
     public static void main(String[] args)
     {
         // Create new Application
-        App t = new App();
+        App a = new App();
         Queries q = new Queries();
 
         // Connect to database
@@ -55,6 +55,66 @@ public class App
         // The top N populated countries in a region where N is provided by the user
         ArrayList<Country> topCountriesRegion = q.topCountriesRegion(5, "Middle East");
         q.printCountries(topCountriesRegion);
+
+        System.out.print("\n\n\n\n\n"); // Space out results
+
+        // All the cities in the world organised by largest population to smallest
+        ArrayList<City> allCitiesGlobal = q.allCitiesGlobal();
+        q.printCities(allCitiesGlobal);
+
+        System.out.print("\n\n\n\n\n"); // Space out results
+
+        // All the cities in a continent organised by largest population to smallest
+        ArrayList<City> allCitiesContinent = q.allCitiesContinent("Oceania");
+        q.printCities(allCitiesContinent);
+
+        System.out.print("\n\n\n\n\n"); // Space out results
+
+        // All the cities in a region organised by largest population to smallest
+        ArrayList<City> allCitiesRegion = q.allCitiesRegion("Western Europe");
+        q.printCities(allCitiesRegion);
+
+        System.out.print("\n\n\n\n\n"); // Space out results
+
+        // All the cities in a country organised by largest population to smallest
+        ArrayList<City> allCitiesCountry = q.allCitiesCountry("United Kingdom");
+        q.printCities(allCitiesCountry);
+
+        System.out.print("\n\n\n\n\n"); // Space out results
+
+        // All the cities in a district organised by largest population to smallest
+        ArrayList<City> allCitiesDistrict = q.allCitiesDistrict("Scotland");
+        q.printCities(allCitiesDistrict);
+
+        System.out.print("\n\n\n\n\n"); // Space out results
+
+        // The top N populated cities in the world where N is provided by the user
+        ArrayList<City> topCitiesGlobal = q.topCitiesGlobal(12);
+        q.printCities(topCitiesGlobal);
+
+        System.out.print("\n\n\n\n\n"); // Space out results
+
+        // The top N populated cities in a continent where N is provided by the user
+        ArrayList<City> topCitiesContinent = q.topCitiesContinent("South America", 18);
+        q.printCities(topCitiesContinent);
+
+        System.out.print("\n\n\n\n\n"); // Space out results
+
+        // The top N populated cities in a region where N is provided by the user
+        ArrayList<City> topCitiesRegion = q.topCitiesRegion("Central Africa", 8);
+        q.printCities(topCitiesRegion);
+
+        System.out.print("\n\n\n\n\n"); // Space out results
+
+        // The top N populated cities in a country where N is provided by the user
+        ArrayList<City> topCitiesCountry = q.topCitiesCountry("Russian Federation", 24);
+        q.printCities(topCitiesCountry);
+
+        System.out.print("\n\n\n\n\n"); // Space out results
+
+        // The top N populated cities in a district where N is provided by the user
+        ArrayList<City> topCitiesDistrict = q.topCitiesDistrict("California", 6);
+        q.printCities(topCitiesDistrict);
 
         // Disconnect from database
         q.disconnect();
