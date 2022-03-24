@@ -17,7 +17,16 @@ public class App
         Queries q = new Queries();
 
         // Connect to database
-        q.connect("db:3306", 30);
+        //q.connect("db:3306", 30);
+
+        if(args.length < 1){
+            q.connect("localhost:33060", 30000);
+        }else{
+            q.connect(args[0], Integer.parseInt(args[1]));
+        }
+
+
+
 
         System.out.print("\n\n\n\n\n"); // Space out results
 
