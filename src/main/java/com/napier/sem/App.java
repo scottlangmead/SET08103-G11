@@ -17,7 +17,7 @@ public class App
         Queries q = new Queries();
 
         // Connect to database
-        q.connect();
+        q.connect("db:3306", 30);
 
         System.out.print("\n\n\n\n\n"); // Space out results
 

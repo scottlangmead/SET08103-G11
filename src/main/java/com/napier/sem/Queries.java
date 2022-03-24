@@ -311,6 +311,13 @@ public class Queries {
         // Holds a list of queried results
         ArrayList<Country> countries = new ArrayList<Country>();
 
+        // Check if query is null
+        if (query == null || query == "")
+        {
+            System.out.println("Invalid query");
+            return countries;
+        }
+
         try
         {
             // Create an SQL statement
@@ -375,6 +382,13 @@ public class Queries {
         // Holds a list of queried results
         ArrayList<City> cities = new ArrayList<City>();
 
+        // Check if query is null
+        if (query == null || query == "")
+        {
+            System.out.println("Invalid query");
+            return cities;
+        }
+
         try
         {
             // Create an SQL statement
@@ -436,6 +450,13 @@ public class Queries {
         // Holds a list of queried results
         ArrayList<City> capitals = new ArrayList<City>();
 
+        // Check if query is null
+        if (query == null || query == "")
+        {
+            System.out.println("Invalid query");
+            return capitals;
+        }
+
         try
         {
             // Create an SQL statement
@@ -492,7 +513,7 @@ public class Queries {
      */
     public static void printCountries(ArrayList<Country> countries)
     {
-        if (countries == null)
+        if (countries == null || countries.isEmpty())
         {
             System.out.println("No countries");
             return;
@@ -516,7 +537,7 @@ public class Queries {
      */
     public static void printCities(ArrayList<City> cities)
     {
-        if (cities == null)
+        if (cities == null || cities.isEmpty())
         {
             System.out.println("No cities");
             return;
@@ -538,7 +559,7 @@ public class Queries {
      */
     public static void printCapitals(ArrayList<City> capitals)
     {
-        if (capitals == null)
+        if (capitals == null || capitals.isEmpty())
         {
             System.out.println("No capitals");
             return;
@@ -562,7 +583,7 @@ public class Queries {
     /**
      * Connect to the MySQL database.
      */
-    public void connect()
+    public void connect(String address, int delay)
     {
         try
         {
@@ -582,9 +603,9 @@ public class Queries {
             try
             {
                 // Wait a bit for db to start
-                Thread.sleep(30000);
+                Thread.sleep(delay * 1000);
                 // Connect to database
-                con = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "example");
+                con = DriverManager.getConnection("jdbc:mysql://" + address + "/world?useSSL=false", "root", "example");
                 System.out.println("Successfully connected");
                 break;
             }
