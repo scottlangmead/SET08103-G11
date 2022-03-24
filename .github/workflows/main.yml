@@ -1,9 +1,6 @@
 name: Workflow for Group 11's Coursework
-on:
-  push:
-    branches:
-      - master
-      - lab08
+on: push
+
 jobs:
   UnitTests:
     name: Unit Tests
