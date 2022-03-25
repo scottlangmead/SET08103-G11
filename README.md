@@ -9,7 +9,7 @@ master
 develop  
 ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/scottlangmead/SET08103-G11/A%20workflow%20for%20my%20Hello%20World%20App/master?style=flat-square)  
 
-[![codecov](https://codecov.io/gh/scottlangmead/SET08103-G11/branch/master/graph/badge.svg?token=3MBzwnUp4V)](https://codecov.io/gh/scottlangmead/SET08103-G11)  
+[![codecov](https://codecov.io/gh/scottlangmead/SET08103-G11/branch/master/graph/badge.svg?token=3MBzwnUp4V)](https://codecov.io/gh/scottlangmead/SET08103-G11)
 [Zube.io](https://zube.io/napier-226/coursework/w/workspace-1/kanban)
 
 
