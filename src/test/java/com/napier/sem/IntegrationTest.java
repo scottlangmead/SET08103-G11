@@ -212,4 +212,73 @@ public class IntegrationTest
         assertEquals(capitals.get(1).getName(), "Riyadh");
         assertEquals(capitals.get(2).getName(), "Ankara");
     }
+
+
+
+    @Test
+    void globalPopulationTest()
+    {
+        long population = queries.globalPopulation();
+        assertEquals(population, 6078749450l);
+    }
+    @Test
+    void continentPopulationTest()
+    {
+        long population = queries.continentPopulation("Asia");
+        assertEquals(population, 3705025700l);
+    }
+    @Test
+    void regionPopulationTest()
+    {
+        long population = queries.regionPopulation("Middle East");
+        assertEquals(population, 188380700l);
+    }
+    @Test
+    void countryPopulationTest()
+    {
+        long population = queries.countryPopulation("Germany");
+        assertEquals(population, 82164700l);
+    }
+    @Test
+    void districtPopulationTest()
+    {
+        long population = queries.districtPopulation("Scotland");
+        assertEquals(population, 1429620l);
+    }
+    @Test
+    void cityPopulationTest()
+    {
+        long population = queries.cityPopulation("London");
+        assertEquals(population, 339917l);
+    }
+    @Test
+    void popReportContinentTest()
+    {
+        ArrayList<Population> populations = queries.popReportContinent();
+        assertEquals(populations.size(), 6);
+        assertEquals(populations.get(0).getName(), "Asia");
+        assertEquals(populations.get(1).getName(), "Europe");
+        assertEquals(populations.get(2).getName(), "North America");
+    }
+    @Test
+    void popReportRegionTest()
+    {
+        ArrayList<Population> populations = queries.popReportRegion();
+        assertEquals(populations.size(), 23);
+        assertEquals(populations.get(0).getName(), "Australia and New Zealand");
+        assertEquals(populations.get(1).getName(), "Baltic Countries");
+        assertEquals(populations.get(2).getName(), "British Islands");
+    }
+    @Test
+    void popReportCountryTest()
+    {
+        ArrayList<Population> populations = queries.popReportCountry();
+        assertEquals(populations.get(0).getName(), "Afghanistan");
+        assertEquals(populations.get(1).getName(), "Albania");
+        assertEquals(populations.get(2).getName(), "Algeria");
+        assertEquals(populations.get(3).getName(), "American Samoa");
+        assertEquals(populations.get(4).getName(), "Andorra");
+    }
+    @Test
+    void languageQueryTest() { queries.languageQuery(); }
 }

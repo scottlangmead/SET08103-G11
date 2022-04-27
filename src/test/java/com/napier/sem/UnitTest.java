@@ -109,6 +109,32 @@ public class UnitTest
         queries.printCapitals(capitals);
     }
 
+    // TESTING PRINT POPULATION FUNCTIONS
+
+    @Test
+    void printPopulationTestNull() { queries.printPopulation(null); }
+    @Test
+    void printPopulationTestEmpty() {
+        ArrayList<Population> populations = new ArrayList<>();
+        queries.printPopulation(populations);
+    }
+    @Test
+    void printPopulationTestContainsNull() {
+        ArrayList<Population> populations = new ArrayList<>();
+        populations.add(null);
+        queries.printPopulation(populations);
+    }
+    @Test
+    void printPopulationTestNonNull() {
+        ArrayList<Population> populations = new ArrayList<>();
+        Population p = new Population();
+        p.setName("Afghanistan");
+        p.setCountryPopulation(22720000);
+        p.setCityPopulation(2332100);
+        populations.add(p);
+        queries.printPopulation(populations);
+    }
+
     // TESTING COUNTRY QUERIES
 
     @Test
@@ -129,4 +155,18 @@ public class UnitTest
     void capitalBaseQueryTestNull() { queries.capitalBaseQuery(null, 0); }
     @Test
     void capitalBaseQueryTestEmpty() { queries.capitalBaseQuery("", 0); }
+
+    // TESTING POPULATION QUERIES
+
+    @Test
+    void populationBaseQueryTestNull() { queries.populationBaseQuery(null); }
+    @Test
+    void populationBaseQueryTestEmpty() { queries.populationBaseQuery(""); }
+
+    // TESTING POPULATION REPORT QUERIES
+
+    @Test
+    void populationReportBaseQueryTestNull() { queries.populationReportBaseQuery(null); }
+    @Test
+    void populationReportBaseQueryTestEmpty() { queries.populationReportBaseQuery(""); }
 }
