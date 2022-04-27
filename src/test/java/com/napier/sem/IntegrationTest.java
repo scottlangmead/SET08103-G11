@@ -11,11 +11,13 @@ import static org.junit.jupiter.api.Assertions.*;
 public class IntegrationTest
 {
     static Queries queries;
+    static App app;
 
     @BeforeAll
     static void init()
     {
         queries = new Queries();
+        app = new App();
         queries.connect("localhost:33060", 30000);
     }
 
@@ -281,4 +283,13 @@ public class IntegrationTest
     }
     @Test
     void languageQueryTest() { queries.languageQuery(); }
+
+    // App.java
+
+    @Test
+    void mainTest()
+    {
+        String[] args = {};
+        app.main(args);
+    }
 }

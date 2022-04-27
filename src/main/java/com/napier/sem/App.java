@@ -17,7 +17,7 @@ public class App
 
         // Connect to database
         if(args.length < 1){
-            q.connect("localhost:33060", 5000); // Change back to 30s
+            q.connect("localhost:33060", 30000);
         }else{
             q.connect(args[0], Integer.parseInt(args[1]));
         }
