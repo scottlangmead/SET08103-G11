@@ -12,32 +12,17 @@ public class Language
     public Language() {}
 
     /**
-     * Language's Country Code
-     */
-    private String code;
-    /**
      * Language Name
      */
     private String language;
     /**
-     *  Language Status
+     *  Population of people who speak the Language
      */
-    private Boolean isOfficial;
+    private long population;
     /**
-     * Percentage of Speakers in Country
+     * Percentage of Worldwide speakers
      */
-    private int percentage;
-
-    /**
-     * Updates the Language Code
-     * @param code
-     */
-    public void setCode(String code) { this.code = code; }
-    /**
-     * Retrieves the Language Code
-     * @return Language Code
-     */
-    public String getCode() { return code; }
+    private float globalPercentage;
 
     /**
      * Updates the Language Title
@@ -51,24 +36,24 @@ public class Language
     public String getLanguage() { return language; }
 
     /**
-     * Updates the Language Status
-     * @param official
+     * Updates the Population of people who speak the Language
+     * @param population
      */
-    public void setOfficial(Boolean official) { isOfficial = official; }
+    public void setPopulation(long population) { this.population = population; }
     /**
-     * Retrieves the Language Status
-     * @return Language Status
+     * Retrieves the Population of people who speak the Language
+     * @return Population of people who speak the Language
      */
-    public Boolean getOfficial() { return isOfficial; }
+    public long getPopulation() { return population; }
 
     /**
-     * Updates the Language Percentage
+     * Updates the Percentage of Worldwide speakers
      * @param percentage
      */
-    public void setPercentage(int percentage) { this.percentage = percentage; }
+    public void setPercentage(float percentage) { this.globalPercentage = percentage; }
     /**
-     * Retrieves the Language Percentage
-     * @return Language Percentage
+     * Retrieves the Percentage of Worldwide speakers
+     * @return Percentage of Worldwide speakers
      */
-    public int getPercentage() { return percentage; }
+    public float getPercentage() { return globalPercentage; }
 }

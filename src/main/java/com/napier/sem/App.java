@@ -17,7 +17,7 @@ public class App
 
         // Connect to database
         if(args.length < 1){
-            q.connect("localhost:33060", 30000);
+            q.connect("localhost:33060", 5000); // Change back to 30s
         }else{
             q.connect(args[0], Integer.parseInt(args[1]));
         }
@@ -209,6 +209,11 @@ public class App
         // The population of people, people living in cities, and people not living in cities in each country
         ArrayList<Population> countryPopulations = q.popReportCountry();
         q.printPopulation(countryPopulations);
+
+        System.out.print("\n\n\n\n\n"); // Space out results
+
+        // Languages of the world
+        q.languageQuery();
 
         System.out.print("\n\n\n"); // Space out results
 
