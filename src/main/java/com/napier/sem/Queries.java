@@ -299,6 +299,109 @@ public class Queries {
                         + "WHERE city.ID = country.Capital AND country.Region = '" + region + "' "
                         + "ORDER BY city.Population DESC ", n);
     }
+    /**
+     * @return The population of the world
+     */
+    public long globalPopulation()
+    {
+        System.out.println("The population of the World:");
+        return populationBaseQuery(
+                "SELECT SUM(Population) AS 'Population' "
+                    + "FROM country ");
+    }
+    /**
+     * @param continent The continent to be displayed
+     * @return The population of a Continent
+     */
+    public long continentPopulation(String continent)
+    {
+        System.out.println("The population of " + continent + ":");
+        return populationBaseQuery(
+                "SELECT SUM(Population) AS 'Population' "
+                    + "FROM country "
+                    + "WHERE continent = '" + continent + "'");
+    }
+    /**
+     * @param region The region to be displayed
+     * @return The population of a Region
+     */
+    public long regionPopulation(String region)
+    {
+        System.out.println("The population of the " + region + ":");
+        return populationBaseQuery(
+                "SELECT SUM(Population) AS 'Population' "
+                    + "FROM country "
+                    + "WHERE region = '" + region + "'");
+    }
+    /**
+     * @param country The country to be displayed
+     * @return The population of a Country
+     */
+    public long countryPopulation(String country)
+    {
+        System.out.println("The population of " + country + ":");
+        return populationBaseQuery(
+                "SELECT Population "
+                    + "FROM country "
+                    + "WHERE name = '" + country + "'");
+    }
+    /**
+     * @param district The district to be displayed
+     * @return The population of a District
+     */
+    public long districtPopulation(String district)
+    {
+        System.out.println("The population of " + district + ":");
+        return populationBaseQuery(
+                "SELECT SUM(Population) AS 'Population' "
+                    + "FROM city "
+                    + "WHERE district = '" + district + "'");
+    }
+    /**
+     * @param city The city to be displayed
+     * @return The population of a City
+     */
+    public long cityPopulation(String city)
+    {
+        System.out.println("The population in " + city + ":");
+        return populationBaseQuery(
+                "SELECT Population "
+                    + "FROM city "
+                    + "WHERE name = '" + city + "'");
+    }
+    /**
+     * @return The population of people, people living in cities, and people not living in cities in each continent
+     */
+    public ArrayList<Population> popReportContinent()
+    {
+        System.out.println("The population of people, people living in cities, and people not living in cities in each continent:");
+        return populationReportBaseQuery(
+                "SELECT country.continent AS 'Name', SUM(DISTINCT country.population) AS 'CountryPopulation', SUM(city.population) AS 'CityPopulation' "
+                    + "FROM city JOIN country ON city.CountryCode = country.Code "
+                    + "GROUP BY country.continent ");
+    }
+    /**
+     * @return The population of people, people living in cities, and people not living in cities in each region
+     */
+    public ArrayList<Population> popReportRegion()
+    {
+        System.out.println("The population of people, people living in cities, and people not living in cities in each region:");
+        return populationReportBaseQuery(
+                "SELECT country.region AS 'Name', SUM(DISTINCT country.population) AS 'CountryPopulation', SUM(city.population) AS 'CityPopulation' "
+                    + "FROM city JOIN country ON city.CountryCode = country.Code "
+                    + "GROUP BY country.region ");
+    }
+    /**
+     * @return The population of people, people living in cities, and people not living in cities in each country
+     */
+    public ArrayList<Population> popReportCountry()
+    {
+        System.out.println("The population of people, people living in cities, and people not living in cities in each country:");
+        return populationReportBaseQuery(
+                "SELECT country.name AS 'Name', SUM(DISTINCT country.population) AS 'CountryPopulation', SUM(city.population) AS 'CityPopulation' "
+                    + "FROM city JOIN country ON city.CountryCode = country.Code "
+                    + "GROUP BY country.name ");
+    }
 
     /**
      * Searches database using provided SQL query.
@@ -339,10 +442,10 @@ public class Queries {
                 country.setContinent(rset.getString("Continent"));
                 country.setRegion(rset.getString("Region"));
                 country.setPopulation(rset.getInt("Population"));
-                // NOTE: We are taking Capital from the city table, therefore it's a String not Int
+                // NOTE: We are taking Capital from the city table, therefore it's a String not an Integer
                 country.setCapital(rset.getString("Capital"));
 
-                // Add city to list
+                // Add country to list
                 countries.add(country);
 
                 // If display specified number of results
@@ -361,7 +464,7 @@ public class Queries {
             if (countries.size() < n)
                 System.out.println("WARNING: There aren't enough countries to fulfill " + n + " results.");
 
-            // Return list of cities
+            // Return list of countries
             return countries;
         }
         catch (Exception e)
@@ -506,6 +609,90 @@ public class Queries {
             return null;
         }
     }
+    /**
+     * @param query SQL query
+     * @return The population of an area
+     */
+    public long populationBaseQuery(String query)
+    {
+        // Holds population of an area
+        long population = -1;
+
+        // Check if query is null
+        if (query == null || query == "")
+        {
+            System.out.println("Invalid query");
+            return population;
+        }
+
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(query);
+
+            while (rset.next())
+                // Extract data from SQL query result
+                population = rset.getLong("Population");
+
+            // Return global population
+            return population;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to retrieve population details");
+            return 0;
+        }
+    }
+    /**
+     * @param query SQL query
+     * @return A report of the Population an area
+     */
+    public ArrayList<Population> populationReportBaseQuery(String query)
+    {
+        // Holds a list of queried results
+        ArrayList<Population> populations = new ArrayList<Population>();
+
+        // Check if query is null
+        if (query == null || query == "")
+        {
+            System.out.println("Invalid query");
+            return populations;
+        }
+
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(query);
+
+            while (rset.next())
+            {
+                // Define population
+                Population population = new Population();
+
+                // Extract data from SQL query result
+                population.setName(rset.getString("Name"));
+                population.setCountryPopulation(rset.getLong("CountryPopulation"));
+                population.setCityPopulation(rset.getLong("CityPopulation"));
+
+                // Add population to list
+                populations.add(population);
+            }
+
+            // Return global population
+            return populations;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to retrieve population details");
+            return null;
+        }
+    }
 
     /**
      * Prints Country data.
@@ -573,6 +760,33 @@ public class Queries {
                 continue;
 
             System.out.println(String.format("%-45s %-45s %-10s", city.getName(), city.getCountryCode(), city.getPopulation()));
+        }
+    }
+    /**
+     * Prints Population data.
+     * @param populations List to be printed
+     */
+    public static void printPopulation(ArrayList<Population> populations)
+    {
+        if (populations == null || populations.isEmpty())
+        {
+            System.out.println("No populations");
+            return;
+        }
+        // Print header
+        System.out.println(String.format("%-40s %-20s %-25s %-25s %-25s %-25s", "Name", "Population", "Living In Cities", "Living Outside Cities", "Living In Cities (%)", "Living In Cities (%)"));
+        // Loop over all countries in the list
+        for (Population population : populations)
+        {
+            if (population == null)
+                continue;
+
+            // Calculations
+            long livingOut = population.getCountryPopulation() - population.getCityPopulation();
+            float livingInPercent = ((float)population.getCityPopulation() / (float)population.getCountryPopulation()) * 100;
+            float livingOutPercent = (1 - ((float)population.getCityPopulation() / (float)population.getCountryPopulation())) * 100;
+
+            System.out.println(String.format("%-40s %-20s %-25s %-25s %-25.2f %-25.2f", population.getName(), population.getCountryPopulation(), population.getCityPopulation(), livingOut, livingInPercent, livingOutPercent));
         }
     }
 

@@ -156,6 +156,62 @@ public class App
         ArrayList<City> topCapitalsRegion = q.topCapitalsRegion("Middle East", 12);
         q.printCapitals(topCapitalsRegion);
 
+        System.out.print("\n\n\n"); // Space out results
+
+        // The population of the world
+        long globalPopulation = q.globalPopulation();
+        System.out.print(globalPopulation);
+
+        System.out.print("\n\n"); // Space out results
+
+        // The population of a continent
+        long continentPopulation = q.continentPopulation("Asia");
+        System.out.print(continentPopulation);
+
+        System.out.print("\n\n"); // Space out results
+
+        // The population of a region
+        long regionPopulation = q.regionPopulation("Middle East");
+        System.out.print(regionPopulation);
+
+        System.out.print("\n\n"); // Space out results
+
+        // The population of a country
+        long countryPopulation = q.countryPopulation("Germany");
+        System.out.print(countryPopulation);
+
+        System.out.print("\n\n"); // Space out results
+
+        // The population of a district
+        long districtPopulation = q.districtPopulation("Scotland");
+        System.out.print(districtPopulation);
+
+        System.out.print("\n\n"); // Space out results
+
+        // The population of a city
+        long cityPopulation = q.cityPopulation("London");
+        System.out.print(cityPopulation);
+
+        System.out.print("\n\n\n"); // Space out results
+
+        // The population of people, people living in cities, and people not living in cities in each continent
+        ArrayList<Population> continentPopulations = q.popReportContinent();
+        q.printPopulation(continentPopulations);
+
+        System.out.print("\n\n\n\n\n"); // Space out results
+
+        // The population of people, people living in cities, and people not living in cities in each region
+        ArrayList<Population> regionPopulations = q.popReportRegion();
+        q.printPopulation(regionPopulations);
+
+        System.out.print("\n\n\n\n\n"); // Space out results
+
+        // The population of people, people living in cities, and people not living in cities in each country
+        ArrayList<Population> countryPopulations = q.popReportCountry();
+        q.printPopulation(countryPopulations);
+
+        System.out.print("\n\n\n"); // Space out results
+
         // Disconnect from database
         q.disconnect();
     }
