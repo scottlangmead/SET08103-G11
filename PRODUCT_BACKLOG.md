@@ -1,5 +1,4 @@
-# Product Backlog
-
+## Product Backlog
 | Task                                                                                           |   Deadline   |  Completion  |
 |:-----------------------------------------------------------------------------------------------|:------------:|:------------:|
 | Set up GitHub Project                                                                          |   11-02-22   |   08-02-22   |
@@ -18,11 +17,11 @@
 | Sprint boards being used                                                                       |   28-02-22   |   25-02-22   |
 | Full use cases defined                                                                         |   04-03-22   |   01-03-22   |
 | Use case diagram created                                                                       |   04-03-22   |   01-03-22   |
-| **CODE REVIEW 2**                                                                              | **11-03-22** |              |
-| Suitable unit tests defined                                                                    |              |              |
-| Suitable integration tests defined                                                             |              |              |
-| Tests running on GitHub Actions                                                                |              |              |
-| **CODE REVIEW 3**                                                                              | **25-03-22** |              |
-| Deployment working                                                                             |              |              |
-| Bug reporting system set-up                                                                    |              |              |
-| **CODE REVIEW 4**                                                                              | **29-04-22** |              |
+| **CODE REVIEW 2**                                                                              | **11-03-22** | **11-03-22** |
+| Suitable unit tests defined                                                                    |   25-03-22   |   24-03-22   |
+| Suitable integration tests defined                                                             |   25-03-22   |   24-03-22   |
+| Tests running on GitHub Actions                                                                |   25-03-22   |   24-03-22   |
+| **CODE REVIEW 3**                                                                              | **25-03-22** | **24-03-22** |
+| Deployment working                                                                             |   29-04-22   |   27-04-22   |
+| Bug reporting system set-up                                                                    |   29-04-22   |   27-04-22   |
+| **CODE REVIEW 4**                                                                              | **29-04-22** | **29-04-22** |
