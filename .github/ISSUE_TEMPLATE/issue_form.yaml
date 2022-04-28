@@ -1,4 +1,11 @@
 name: Issue Form
+description: File a report
+title: "[Report]: "
+labels: ["bug", "enhancement"]
+assignees:
+  - scottlangmead
+  - Matt0206
+  - MdSaifullah80
 body:
   - type: markdown
     attributes:
